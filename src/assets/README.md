@@ -1,0 +1,1 @@
+# Assets\n\nReemplazá estos placeholders con los archivos reales:\n- logo-as.png\n- angeles-consultoria.jpeg\n- video-presentacion.mp4\n
