@@ -30,14 +30,16 @@ export default function Hero() {
           con un sistema simple y aplicable.
         </p>
         <div className="hero-actions">
-          <a href="#planes" className="btn btn-primary btn-lg">
-            Ver planes
-          </a>
-          <a href="#como-trabajo" className="btn btn-ghost btn-lg">
-            Conocé cómo trabajo
-          </a>
-        </div>
-        <p className="hero-note">Diagnóstico desde USD 29</p>
+  <a href="#ebook" className="btn btn-primary btn-lg">
+    Conocé el ebook
+  </a>
+  <a href="#planes" className="btn btn-ghost btn-lg">
+    Ver planes de consultoría
+  </a>
+</div>
+<p className="hero-note">
+  Empezá con el ebook desde $20.000 ARS
+</p>
       </div>
     </section>
   )

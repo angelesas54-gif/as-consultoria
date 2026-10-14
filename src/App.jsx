@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Problems from './components/Problems'
@@ -6,6 +7,7 @@ import NotACourse from './components/NotACourse'
 import HowWeWork from './components/HowWeWork'
 import PlansIntro from './components/PlansIntro'
 import Plans from './components/Plans'
+import Ebook from './components/Ebook'
 import Testimonials from './components/Testimonials'
 import About from './components/About'
 import AgenteAdvance from './components/AgenteAdvance'
@@ -13,8 +15,9 @@ import FAQ from './components/FAQ'
 import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
+import AccesoEbook from './pages/AccesoEbook'
 
-export default function App() {
+function Landing() {
   return (
     <>
       <a href="#inicio" className="skip-link">
@@ -27,6 +30,7 @@ export default function App() {
         <VideoSection />
         <NotACourse />
         <HowWeWork />
+        <Ebook />
         <PlansIntro />
         <Plans />
         <Testimonials />
@@ -38,5 +42,29 @@ export default function App() {
       <Footer />
       <WhatsAppFloat />
     </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<Landing />} />
+<Route
+  path="/ebook"
+  element={
+    <>
+      <Header />
+      <main>
+        <Ebook />
+      </main>
+      <Footer />
+      <WhatsAppFloat />
+    </>
+  }
+/>
+<Route path="/acceso-ebook" element={<AccesoEbook />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

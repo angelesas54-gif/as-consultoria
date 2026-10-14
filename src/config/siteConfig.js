@@ -3,13 +3,21 @@
  * Editá aquí dominios, links, precios y datos bancarios.
  */
 
+import {
+  EBOOK_BONUS_NAME,
+  EBOOK_EXTERNAL_REFERENCE,
+  EBOOK_NAME,
+  EBOOK_PRICE_ARS,
+  EBOOK_PRICE_USD,
+} from '../../shared/ebook.js'
+
 export const DOMAIN = 'https://asconsultoria.ar'
 
 export const WHATSAPP_NUMBER = '5491156039275'
 export const WHATSAPP_DISPLAY = '+54 9 11 5603-9275'
 
 export const INSTAGRAM_URL = 'https://www.instagram.com/asconsultoria.ar'
-export const AGENTE_ADVANCE_URL = 'https://agenteadvance.com'
+export const AGENTE_ADVANCE_URL = 'https://www.agenteadvance.com'
 
 export const MERCADOPAGO = {
   diagnostico: 'https://mpago.la/15L8nKq',
@@ -128,3 +136,88 @@ export function getWhatsAppUrl(message) {
 export function formatArs(amount) {
   return amount.toLocaleString('es-AR')
 }
+
+/**
+ * Producto digital separado de PLANS (consultoría).
+ * Precios y textos de compra: única fuente de verdad para la UI del ebook.
+ */
+export const EBOOK = {
+  id: EBOOK_EXTERNAL_REFERENCE,
+  externalReference: EBOOK_EXTERNAL_REFERENCE,
+  name: EBOOK_NAME,
+  bonusName: EBOOK_BONUS_NAME,
+  bonusLabel: `BONUS INCLUIDO: ${EBOOK_BONUS_NAME}`,
+  priceUsd: EBOOK_PRICE_USD,
+  priceArs: EBOOK_PRICE_ARS,
+  priceLabel: `USD ${EBOOK_PRICE_USD}`,
+  priceArsLabel: `$${formatArs(EBOOK_PRICE_ARS)} ARS`,
+  transferLabel: `Pagar USD ${EBOOK_PRICE_USD} por transferencia`,
+  cardLabel: `Pagar $${formatArs(EBOOK_PRICE_ARS)} con Mercado Pago`,
+  description:
+    'Material práctico para ordenar tu negocio inmobiliario y poner a girar la rueda comercial.',
+  accessNoteArs: 'Con Mercado Pago (ARS): acceso inmediato al aprobarse el pago.',
+  accessNoteUsd: 'Con transferencia (USD): acceso después de confirmar la transferencia.',
+  whatsappTransferMessage: `Hola Ángeles, ya hice la transferencia de USD ${EBOOK_PRICE_USD} del ebook “${EBOOK_NAME}”. Te envío el comprobante.`,
+  agenteAdvanceUrl: AGENTE_ADVANCE_URL,
+  videos: {
+    duenoVende: {
+      title: 'Dueño Vende',
+      url: 'https://youtu.be/sN4EWe4M_7M',
+      youtubeId: 'sN4EWe4M_7M',
+    },
+    compradores: {
+      title: 'Compradores',
+      url: 'https://youtu.be/68FsI_wC7nI',
+      youtubeId: '68FsI_wC7nI',
+    },
+    agenteAdvanceVendedor: {
+      title: 'Agente Advance: vendedor + propiedad',
+      url: 'https://www.youtube.com/shorts/KvVgz37nrms',
+      youtubeId: 'KvVgz37nrms',
+    },
+    agenteAdvanceComprador: {
+      title: 'Agente Advance: comprador + visita',
+      url: 'https://www.youtube.com/shorts/MSr9vbI2AB4',
+      youtubeId: 'MSr9vbI2AB4',
+    },
+  },
+}
+
+/**
+ * Recorrido comercial: ebook primero, consultoría después.
+ * Agente Advance no es un nivel: es herramienta complementaria.
+ */
+export const COMMERCIAL_PATH = [
+  {
+    id: 'ebook',
+    step: '01',
+    name: EBOOK_NAME,
+    priceLabel: `USD ${EBOOK_PRICE_USD}`,
+    text: 'Aprendizaje independiente, con la guía bonus incluida.',
+    href: '/ebook',
+  },
+  {
+    id: 'diagnostico',
+    step: '02',
+    name: 'Diagnóstico Express',
+    priceLabel: 'USD 29',
+    text: 'Detectar problemas y oportunidades en tu negocio actual.',
+    href: '/#plan-diagnostico',
+  },
+  {
+    id: 'plan7',
+    step: '03',
+    name: 'Plan de 7 días',
+    priceLabel: 'USD 99',
+    text: 'Implementar mejoras concretas sobre tu operación real.',
+    href: '/#plan-plan7',
+  },
+  {
+    id: 'mensual',
+    step: '04',
+    name: 'Acompañamiento mensual',
+    priceLabel: 'USD 150',
+    text: 'Seguimiento personalizado para sostener los resultados.',
+    href: '/#plan-mensual',
+  },
+]

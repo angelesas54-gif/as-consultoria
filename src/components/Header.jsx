@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import logo from '../assets/logo-as.png'
 
-const NAV_LINKS = [
-  { href: '#como-trabajo', label: 'Cómo trabajo' },
-  { href: '#planes', label: 'Planes' },
-  { href: '#sobre-mi', label: 'Sobre mí' },
-  { href: '#faq', label: 'Preguntas frecuentes' },
-]
+  const NAV_LINKS = [
+    { href: '/#ebook', label: 'Ebook' },
+    { href: '/#planes', label: 'Planes de consultoría' },
+    { href: '/#como-trabajo', label: 'Cómo trabajo' },
+    { href: '/#sobre-mi', label: 'Sobre mí' },
+    { href: '/#faq', label: 'Preguntas frecuentes' },
+  ]
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -31,7 +32,7 @@ export default function Header() {
   return (
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="container header-inner">
-        <a href="#inicio" className="brand" onClick={closeMenu} aria-label="AS Consultoría — inicio">
+      <a href="/" className="brand" onClick={closeMenu} aria-label="AS Consultoría — inicio">
           <img src={logo} alt="AS Consultoría" className="brand-logo" width="140" height="40" />
         </a>
 
@@ -43,9 +44,9 @@ export default function Header() {
           ))}
         </nav>
 
-        <a href="#planes" className="btn btn-sm btn-primary header-cta">
-          Ver planes
-        </a>
+        <a href="/#ebook" className="btn btn-sm btn-primary header-cta">
+  Conocé el ebook
+</a>
 
         <button
           type="button"
